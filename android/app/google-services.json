@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862418580998",
+    "project_id": "jobcv-c2975",
+    "storage_bucket": "jobcv-c2975.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862418580998:android:d5f4ac355ca4b7b22bf587",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbH2AVU9E-fhWzu84IvVTrnVyDPWvfNqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
