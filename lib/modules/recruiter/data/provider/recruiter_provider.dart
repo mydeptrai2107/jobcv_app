@@ -8,12 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class RecruiterProvider extends ChangeNotifier {
   Company get recruiter => _recruiter;
-  Company _recruiter = Company(
-      name: '',
-      contact: '',
-      createdAt: DateTime.now(),
-      updatedAt: DateTime.now(),
-      id: '');
+  late  Company _recruiter;
 
   Future<Company?> findMe() async {
     try {

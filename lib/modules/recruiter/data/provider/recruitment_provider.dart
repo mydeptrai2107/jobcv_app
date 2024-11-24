@@ -46,7 +46,7 @@ class RecruitmentProvider extends ChangeNotifier {
 
       await recentlyCreated();
       notifyListeners();
-      _listNotification(_listRecruitmentAll);
+      // _listNotification(_listRecruitmentAll);
       await getAllCv(id);
     } on Exception catch (e, x) {
       log('Stack trace : $x');

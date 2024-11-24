@@ -49,18 +49,18 @@ import 'shared/provider/provider_apply.dart';
 class AppModule extends Module {
   @override
   void binds(Injector i) {
-    i.add(ProviderApp.new);
-    i.add(ProviderAuth.new);
-    i.add(ProviderUser.new);
-    i.add(ProviderProfile.new);
-    i.add(ProviderCompany.new);
-    i.add(ProviderRecruitment.new);
-    i.add(ProviderApply.new);
+    i.addSingleton(ProviderApp.new);
+    i.addSingleton(RecruiterProvider.new);
+    i.addSingleton(ProviderRecruitment.new);
+    i.addSingleton(ProviderAuth.new);
+    i.addSingleton(ProviderUser.new);
+    i.addSingleton(ProviderProfile.new);
+    i.addSingleton(ProviderCompany.new);
+    i.addSingleton(ProviderApply.new);
 
     // if role Recruiter
-    i.add(RecruitmentProvider.new);
-    i.add(RecruiterProvider.new);
-    i.add(NotificationProvider.new);
+    i.addSingleton(RecruitmentProvider.new);
+    i.addSingleton(NotificationProvider.new);
   }
 
   @override
