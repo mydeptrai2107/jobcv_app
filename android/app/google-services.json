@@ -1,26 +1,43 @@
 {
   "project_info": {
-    "project_number": "862418580998",
-    "project_id": "jobcv-c2975",
-    "storage_bucket": "jobcv-c2975.firebasestorage.app"
+    "project_number": "615170747522",
+    "project_id": "jobcv-9a173",
+    "storage_bucket": "jobcv-9a173.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:862418580998:android:d5f4ac355ca4b7b22bf587",
+        "mobilesdk_app_id": "1:615170747522:android:9a0ae33ec1a4e387ce589b",
         "android_client_info": {
           "package_name": "com.example.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "615170747522-ge4uume9ukmejegmtdtnonunm14ugufc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAbH2AVU9E-fhWzu84IvVTrnVyDPWvfNqM"
+          "current_key": "AIzaSyDdDY6uWpt5xOk4gUF-g11plqzgKRfgFcQ"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615170747522-br1nr0knohglq96hk474e7u9s504p0ee.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615170747522-9nd4sbhe586nac28lrk6hggnho2aj676.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
         }
       }
     }

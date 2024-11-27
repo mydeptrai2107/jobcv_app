@@ -54,19 +54,20 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAbH2AVU9E-fhWzu84IvVTrnVyDPWvfNqM',
-    appId: '1:862418580998:android:d5f4ac355ca4b7b22bf587',
-    messagingSenderId: '862418580998',
-    projectId: 'jobcv-c2975',
-    storageBucket: 'jobcv-c2975.firebasestorage.app',
+    apiKey: 'AIzaSyDdDY6uWpt5xOk4gUF-g11plqzgKRfgFcQ',
+    appId: '1:615170747522:android:9a0ae33ec1a4e387ce589b',
+    messagingSenderId: '615170747522',
+    projectId: 'jobcv-9a173',
+    storageBucket: 'jobcv-9a173.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA0PNL31BZx_TgNEBZ_hyJvTLL-eo11HMc',
-    appId: '1:862418580998:ios:bc06239144a9488f2bf587',
-    messagingSenderId: '862418580998',
-    projectId: 'jobcv-c2975',
-    storageBucket: 'jobcv-c2975.firebasestorage.app',
+    apiKey: 'AIzaSyCwt5mLrEr-QfoJo_yBZtc7GPBisXk7FzU',
+    appId: '1:615170747522:ios:28d3438d0bda39d5ce589b',
+    messagingSenderId: '615170747522',
+    projectId: 'jobcv-9a173',
+    storageBucket: 'jobcv-9a173.firebasestorage.app',
+    iosClientId: '615170747522-9nd4sbhe586nac28lrk6hggnho2aj676.apps.googleusercontent.com',
     iosBundleId: 'com.example.app',
   );
 

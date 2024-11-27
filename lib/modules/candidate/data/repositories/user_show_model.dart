@@ -13,9 +13,9 @@ class UserShow {
     String lastName;
     DateTime createdAt;
     DateTime updatedAt;
-    String phone;
-    String gender;
-    String avatar;
+    String ? phone;
+    String ? gender;
+    String ? avatar;
     String id;
 
     UserShow({

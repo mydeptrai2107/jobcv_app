@@ -32,7 +32,7 @@ class _ItemCVState extends State<ItemCV> {
 
   initData() async {
     user = await Modular.get<ProviderUser>().getUserById(widget.apply.userId);
-    avatar = userRepositories.getAvatar(user!.avatar);
+    avatar = userRepositories.getAvatar(user?.avatar ?? 'https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg');
     setState(() {});
   }
 

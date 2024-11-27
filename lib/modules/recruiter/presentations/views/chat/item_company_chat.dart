@@ -45,7 +45,7 @@ class _ItemCompanyChatState extends State<ItemCompanyChat> {
           widget.idCompany,
           widget.idUser,
           user!.firstName + user!.lastName,
-          getAvatarUser(user!.avatar)
+          getAvatarUser(user?.avatar ?? 'https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg')
         ]);
       },
       child: Container(
