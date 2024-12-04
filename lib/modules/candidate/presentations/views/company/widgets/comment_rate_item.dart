@@ -39,9 +39,9 @@ class _CommentRateItemState extends State<CommentRateItem> {
               ),
               Container(
                 margin: const EdgeInsets.only(left: 12),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Joel Oliveira',
                       style:

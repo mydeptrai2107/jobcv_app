@@ -1,6 +1,6 @@
 import 'package:app/modules/recruiter/data/provider/recruitment_provider.dart';
 import 'package:app/modules/recruiter/presentations/views/home/widgets/recruitment_efficiency.dart';
-import 'package:app/modules/recruiter/presentations/views/management/widgets/item_cv.dart';
+import 'package:app/modules/recruiter/presentations/views/management/widgets/item_cv_widget.dart';
 import 'package:app/modules/recruiter/presentations/views/recruitment/widgets/item_recruitment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

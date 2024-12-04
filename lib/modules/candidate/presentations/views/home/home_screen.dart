@@ -92,9 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 'Bạn muốn tìm việc',
                                 style: TextStyle(

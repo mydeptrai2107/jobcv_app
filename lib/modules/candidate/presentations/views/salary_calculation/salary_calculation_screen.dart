@@ -404,9 +404,9 @@ class _SalaryCalculationScreenState extends State<SalaryCalculationScreen> {
                   top: BorderSide(color: Colors.grey, width: 0.5),
                   left: BorderSide(color: Colors.grey, width: 0.5),
                   right: BorderSide(color: Colors.grey, width: 0.5))),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 'Diễn giải',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
@@ -509,9 +509,9 @@ class _SalaryCalculationScreenState extends State<SalaryCalculationScreen> {
                           fontSize: 15, fontWeight: FontWeight.w500))
                 ],
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'Giảm trừ gia cảnh bản thân',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),

@@ -5,8 +5,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class HomeChatRecruiterScreen extends StatefulWidget {
   final String currentUserId;
-  const HomeChatRecruiterScreen({Key? key, required this.currentUserId})
-      : super(key: key);
+  const HomeChatRecruiterScreen({super.key, required this.currentUserId});
 
   @override
   State<HomeChatRecruiterScreen> createState() =>

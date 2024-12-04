@@ -2,7 +2,7 @@ import 'package:app/configs/image_factory.dart';
 import 'package:app/modules/candidate/data/models/apply_model.dart';
 import 'package:app/modules/recruiter/data/provider/recruiter_provider.dart';
 import 'package:app/modules/recruiter/data/provider/recruitment_provider.dart';
-import 'package:app/modules/recruiter/presentations/views/management/widgets/item_cv.dart';
+import 'package:app/modules/recruiter/presentations/views/management/widgets/item_cv_widget.dart';
 import 'package:app/shared/provider/provider_apply.dart';
 import 'package:flutter/material.dart';
 import 'package:app/modules/recruiter/presentations/widgets/search_box.dart';

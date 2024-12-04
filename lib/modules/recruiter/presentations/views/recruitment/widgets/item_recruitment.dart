@@ -15,9 +15,9 @@ import '../../../../../candidate/presentations/themes/color.dart';
 class ItemRecruitment extends StatefulWidget {
   final Recruitment item;
   const ItemRecruitment({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
 
   @override
   State<ItemRecruitment> createState() => _ItemRecruitmentState();
@@ -171,7 +171,7 @@ class _ItemRecruitmentState extends State<ItemRecruitment> {
                             height: 30,
                             padding: const EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 245, 236, 255),
+                                color: const Color.fromARGB(255, 245, 236, 255),
                                 borderRadius: BorderRadius.circular(6.0)),
                             child: Text(
                               'Có ${applys.length} ứng tuyển',
@@ -213,10 +213,10 @@ class Element extends StatelessWidget {
   final String label;
   final String des;
   const Element({
-    Key? key,
+    super.key,
     required this.label,
     required this.des,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

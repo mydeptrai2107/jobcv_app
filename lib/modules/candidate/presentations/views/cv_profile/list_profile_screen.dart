@@ -50,9 +50,9 @@ class _ListProfileScreenState extends State<ListProfileScreen> {
                     margin: const EdgeInsets.symmetric(horizontal: 15),
                     height: 140,
                     width: size.width,
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'CV',
                           style: TextStyle(

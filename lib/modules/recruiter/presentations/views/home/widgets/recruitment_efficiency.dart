@@ -1,3 +1,5 @@
+// ignore_for_file: no_wildcard_variable_uses
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -7,9 +9,9 @@ import 'package:app/shared/models/recruitment_model.dart';
 class RecruitmentEfficiency extends StatelessWidget {
   final List<Recruitment> list;
   const RecruitmentEfficiency({
-    Key? key,
+    super.key,
     required this.list,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

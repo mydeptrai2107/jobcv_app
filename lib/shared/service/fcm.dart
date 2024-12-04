@@ -8,7 +8,9 @@ import 'package:flutter/foundation.dart';
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await setupFlutterNotifications();
   showFlutterNotification(message);
-  print('Handling a background message ${message.messageId}');
+  if (kDebugMode) {
+    print('Handling a background message ${message.messageId}');
+  }
 }
 
 bool isFlutterLocalNotificationsInitialized = false;

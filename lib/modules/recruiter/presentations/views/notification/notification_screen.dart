@@ -1,3 +1,5 @@
+// ignore_for_file: no_wildcard_variable_uses
+
 import 'package:app/modules/candidate/presentations/themes/color.dart';
 import 'package:app/modules/recruiter/data/provider/recruitment_provider.dart';
 import 'package:app/shared/utils/format.dart';

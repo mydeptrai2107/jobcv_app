@@ -21,7 +21,9 @@ class NotificationProvider extends ChangeNotifier {
           .collection('notifications')
           .add(notificationData);
     } catch (e) {
-      print('Error saving notification: $e');
+      if (kDebugMode) {
+        print('Error saving notification: $e');
+      }
     }
   }
 
@@ -31,7 +33,9 @@ class NotificationProvider extends ChangeNotifier {
           await FirebaseFirestore.instance.collection('notifications').get();
       return querySnapshot.docs.map((doc) => doc.data()).toList();
     } catch (e) {
-      print('Error retrieving notifications: $e');
+      if (kDebugMode) {
+        print('Error retrieving notifications: $e');
+      }
       return [];
     }
   }

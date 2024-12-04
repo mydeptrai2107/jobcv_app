@@ -5,11 +5,11 @@ class OntapEffect extends StatelessWidget {
   final Widget child;
   final double radius;
   const OntapEffect({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.child,
     required this.radius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

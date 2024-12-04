@@ -8,11 +8,9 @@ import 'package:app/modules/recruiter/data/repositories/recruitment_repository.d
 import 'package:app/modules/recruiter/presentations/views/recruitment/widgets/filter_cv.dart';
 import 'package:app/shared/models/recruitment_model.dart';
 import 'package:app/shared/provider/provider_apply.dart';
-import 'package:app/shared/service/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:timezone/timezone.dart' as tz;
 
 class RecruitmentProvider extends ChangeNotifier {
   List<Recruitment> get listRecruitment => _listRecruitment;
@@ -53,17 +51,17 @@ class RecruitmentProvider extends ChangeNotifier {
     }
   }
 
-  _listNotification(List<Recruitment> items) {
-    for (var element in items) {
-      final item = NotificationModel(
-          idRecruitment: element.id ?? '',
-          title: element.title ?? '',
-          deadline: element.deadline ?? DateTime.now());
-      final tzTime = tz.TZDateTime.from(item.deadline, tz.local);
-      _notifications.add(item);
-      _notification(tzTime, item.title, items.indexOf(element));
-    }
-  }
+  // _listNotification(List<Recruitment> items) {
+  //   for (var element in items) {
+  //     final item = NotificationModel(
+  //         idRecruitment: element.id ?? '',
+  //         title: element.title ?? '',
+  //         deadline: element.deadline ?? DateTime.now());
+  //     final tzTime = tz.TZDateTime.from(item.deadline, tz.local);
+  //     _notifications.add(item);
+  //     _notification(tzTime, item.title, items.indexOf(element));
+  //   }
+  // }
 
   removeNotification(String id) async {
     _notifications.removeWhere((element) => element.idRecruitment == id);
@@ -71,10 +69,10 @@ class RecruitmentProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  _notification(tz.TZDateTime tzTime, String title, int id) {
-    NotificationService.instance
-        .scheduleNotification(id, 'Tin hết hạn', ' item.title!', tzTime);
-  }
+  // _notification(tz.TZDateTime tzTime, String title, int id) {
+  //   NotificationService.instance
+  //       .scheduleNotification(id, 'Tin hết hạn', ' item.title!', tzTime);
+  // }
 
   Future recentlyCreated() async {
     _listRecruitmentAll.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));

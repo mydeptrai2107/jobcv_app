@@ -53,10 +53,10 @@ class _CreateCVScreenState extends State<CreateCVScreen> {
               //Note
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 15.w),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Hướng dẫn',
                       style:

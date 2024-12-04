@@ -58,21 +58,25 @@ class _LoadingScreenState extends State<LoadingScreen> {
         width: size.width,
         height: size.height,
         color: primaryColor,
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'JobCV',
               style: TextStyle(
-                  fontSize: 45,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900),
+                fontSize: 45,
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
             ),
-            Text('Tìm kiếm, kết nối, xây dựng thành công',
-                style: TextStyle(
-                    fontSize: 17,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700))
+            Text(
+              'Tìm kiếm, kết nối, xây dựng thành công',
+              style: TextStyle(
+                fontSize: 17,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
           ],
         ),
       ),

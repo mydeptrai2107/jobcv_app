@@ -13,9 +13,9 @@ class ButtonFilter extends StatelessWidget {
           elevation: 0,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
-      child: Row(
+      child: const Row(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           Icon(Ionicons.options_outline, color: Colors.black),
           Text(
             'Lọc',

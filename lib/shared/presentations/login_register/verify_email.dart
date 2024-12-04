@@ -1,9 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:app/configs/route_path.dart';
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:elegant_notification/resources/arrays.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -78,7 +81,6 @@ class _VerifyEmailState extends State<VerifyEmail> {
 
     if (isEmailVerified) {
       timer?.cancel();
-      // ignore: use_build_context_synchronously
       ElegantNotification.success(
         width: 360,
         animation: AnimationType.fromTop,
@@ -106,6 +108,10 @@ class _VerifyEmailState extends State<VerifyEmail> {
       setState(() {
         canResendEmail = true;
       });
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
   }
 }
