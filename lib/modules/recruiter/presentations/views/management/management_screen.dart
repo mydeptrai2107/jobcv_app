@@ -120,16 +120,30 @@ class _ManagementScreenState extends State<ManagementScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(child: Builder(builder: (_) {
-                  return GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    children: List.generate(applys.length, (index) {
-                      final item = applys[index];
-                      return ItemCV(apply: item);
-                    }),
-                  );
-                }))
+                Expanded(
+                  child: Builder(
+                    builder: (_) {
+                      return GridView.count(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        children: List.generate(applys.length, (index) {
+                          final item = applys[index];
+                          return ItemCV(
+                            apply: item,
+                            onApply: () async {
+                              applys.clear();
+                              listMiss.clear();
+                              listPass.clear();
+                              await initData();
+                              setState(() {});
+                              print('3sssssssssssssssss');
+                            },
+                          );
+                        }),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           );
@@ -148,9 +162,11 @@ class _ManagementScreenState extends State<ManagementScreen> {
                   width: 100,
                   height: 100,
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(ImageFactory.searchNotFound),
-                          fit: BoxFit.fill)),
+                    image: DecorationImage(
+                      image: AssetImage(ImageFactory.searchNotFound),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
                 const Text(
                   'Không tìm thấy dữ liệu',
@@ -164,16 +180,32 @@ class _ManagementScreenState extends State<ManagementScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(child: Builder(builder: (_) {
-                  return GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    children: List.generate(listPass.length, (index) {
-                      final item = listPass[index];
-                      return ItemCV(apply: item);
-                    }),
-                  );
-                }))
+                Expanded(
+                  child: Builder(
+                    builder: (_) {
+                      return GridView.count(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        children: List.generate(
+                          listPass.length,
+                          (index) {
+                            final item = listPass[index];
+                            return ItemCV(
+                              apply: item,
+                              onApply: () async {
+                                listMiss.clear();
+                                listPass.clear();
+                                await initData();
+                                setState(() {});
+                                print('2sssssssssssssssss');
+                              },
+                            );
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           );
@@ -192,9 +224,11 @@ class _ManagementScreenState extends State<ManagementScreen> {
                   width: 100,
                   height: 100,
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(ImageFactory.searchNotFound),
-                          fit: BoxFit.fill)),
+                    image: DecorationImage(
+                      image: AssetImage(ImageFactory.searchNotFound),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
                 const Text(
                   'Không tìm thấy dữ liệu',
@@ -208,16 +242,32 @@ class _ManagementScreenState extends State<ManagementScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(child: Builder(builder: (_) {
-                  return GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    children: List.generate(listMiss.length, (index) {
-                      final item = listMiss[index];
-                      return ItemCV(apply: item);
-                    }),
-                  );
-                }))
+                Expanded(
+                  child: Builder(
+                    builder: (_) {
+                      return GridView.count(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        children: List.generate(
+                          listMiss.length,
+                          (index) {
+                            final item = listMiss[index];
+                            return ItemCV(
+                              apply: item,
+                              onApply: () async {
+                                listMiss.clear();
+                                listPass.clear();
+                                await initData();
+                                setState(() {});
+                                print('1sssssssssssssssss');
+                              },
+                            );
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           );

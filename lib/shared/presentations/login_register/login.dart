@@ -5,7 +5,6 @@ import 'dart:convert';
 import 'package:app/configs/image_factory.dart';
 import 'package:app/configs/route_path.dart';
 import 'package:app/modules/candidate/data/models/user_model.dart';
-import 'package:app/modules/candidate/data/repositories/authen_firebase_repositories.dart';
 import 'package:app/modules/candidate/data/repositories/chat_repositories.dart';
 import 'package:app/modules/candidate/domain/providers/provider_auth.dart';
 import 'package:app/modules/candidate/presentations/themes/color.dart';
@@ -232,63 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20.h,
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 1,
-                  width: size.width / 5,
-                  color: Colors.grey,
-                ),
-                const Text('Hoặc đăng nhập bằng'),
-                Container(
-                  height: 1,
-                  width: size.width / 5,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
-
-            SizedBox(
-              height: 10.h,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    AuthenFirebaseRepositories().signIn();
-                  },
-                  child: Container(
-                      padding: const EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(width: 1, color: Colors.grey)),
-                      child: SvgPicture.asset(
-                        ImageFactory.facebookIcon,
-                        width: 35,
-                        height: 35,
-                      )),
-                ),
-                SizedBox(
-                  width: 15.w,
-                ),
-                Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(width: 1, color: Colors.grey)),
-                    child: SvgPicture.asset(
-                      ImageFactory.googleIcon,
-                      width: 35,
-                      height: 35,
-                    )),
-              ],
-            ),
-
-            Expanded(child: Container()),
-
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

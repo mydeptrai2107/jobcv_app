@@ -33,12 +33,7 @@ class _ListProfileScreenState extends State<ListProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('JobCV'),
-        leading: IconButton(
-            onPressed: () {
-              Modular.to.pushNamed(RoutePath.welcomeCreateCV);
-            },
-            icon: const Icon(Icons.arrow_back)),
-      ),
+        ),
       body: !provider.isLoading
           ? const Center(child: CircularProgressIndicator())
           : SizedBox(

@@ -15,9 +15,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ItemCV extends StatefulWidget {
-  const ItemCV({super.key, required this.apply});
+  const ItemCV({
+    super.key,
+    required this.apply,
+    this.onApply,
+  });
 
   final Apply apply;
+  final Future Function()? onApply;
 
   @override
   State<ItemCV> createState() => _ItemCVState();
@@ -32,7 +37,7 @@ class _ItemCVState extends State<ItemCV> {
 
   initData() async {
     user = await Modular.get<ProviderUser>().getUserById(widget.apply.userId);
-    avatar = userRepositories.getAvatar(user?.avatar ?? 'https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg');
+    avatar = userRepositories.getAvatar(user?.avatar ?? 'user.png');
     setState(() {});
   }
 
@@ -62,9 +67,10 @@ class _ItemCVState extends State<ItemCV> {
         onTap: () async {
           final profile = await Modular.get<ProviderApply>()
               .getProfileByUserId(widget.apply.userProfileId);
-          Modular.to.pushNamed(RoutePath.pdfViewer,
+          await Modular.to.pushNamed(RoutePath.pdfViewer,
               arguments: [profile.name, profile.pathCv, true, widget.apply.id]);
           await _saveRecently();
+          if (widget.onApply != null) await widget.onApply!();
         },
         child: Container(
           padding: const EdgeInsets.all(16.0),

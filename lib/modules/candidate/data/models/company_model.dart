@@ -34,8 +34,8 @@ class Company {
   });
 
   factory Company.fromJson(Map<String, dynamic> json) => Company(
-        name: json["name"],
-        contact: json["contact"],
+        name: json["name"] ?? "",
+        contact: json["contact"] ?? "",
         createdAt: DateTime.parse(json["createdAt"]),
         updatedAt: DateTime.parse(json["updatedAt"]),
         avatar: json["avatar"] ?? kImageDefault,

@@ -236,61 +236,63 @@ class _DetailRecruitmentState extends State<DetailRecruitment> {
           direction: Axis.horizontal,
           children: [
             Expanded(
-                flex: 4,
-                child: ButtonApp(
-                  height: 38,
-                  backGroundColor: countDayApplied >= 0 && countDayApplied <= 6
-                      ? Colors.grey
-                      : primaryColor,
-                  onPress: () {
-                    if (countDayApplied == -1) {
-                      Modular.to.pushNamed(RoutePath.applyScreen,
-                          arguments: [widget.recruitment, widget.company.id]);
-                    }
-                  },
-                  title: checkApplied
-                      ? countDayApplied <= 6
-                          ? "Đã ứng tuyển"
-                          : "Ứng tuyển lại"
-                      : 'Ứng tuyển ngay',
-                  borderRadius: 100,
-                )),
+              flex: 4,
+              child: ButtonApp(
+                height: 38,
+                backGroundColor: countDayApplied >= 0 && countDayApplied <= 6
+                    ? Colors.grey
+                    : primaryColor,
+                onPress: () {
+                  if (countDayApplied == -1) {
+                    Modular.to.pushNamed(RoutePath.applyScreen,
+                        arguments: [widget.recruitment, widget.company.id]);
+                  }
+                },
+                title: checkApplied
+                    ? countDayApplied <= 6
+                        ? "Đã ứng tuyển"
+                        : "Ứng tuyển lại"
+                    : 'Ứng tuyển ngay',
+                borderRadius: 100,
+              ),
+            ),
             Expanded(
                 flex: 1,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    GestureDetector(
-                      onTap: () async {
-                        String? encodeQueryParameters(
-                            Map<String, String> params) {
-                          return params.entries
-                              .map((MapEntry<String, String> e) =>
-                                  '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                              .join('&');
-                        }
+                    // GestureDetector(
+                    //   onTap: () async {
+                    //     String? encodeQueryParameters(
+                    //         Map<String, String> params) {
+                    //       return params.entries
+                    //           .map((MapEntry<String, String> e) =>
+                    //               '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                    //           .join('&');
+                    //     }
 
-                        final Uri emailLaunchUri = Uri(
-                          scheme: 'mailto',
-                          path: widget.company.contact,
-                          query: encodeQueryParameters(<String, String>{
-                            'subject': 'Example Subject & Symbols are allowed!',
-                          }),
-                        );
+                    //     print(widget.company.contact);
+                    //     final Uri emailLaunchUri = Uri(
+                    //       scheme: 'mailto',
+                    //       path: widget.company.contact,
+                    //       query: encodeQueryParameters(<String, String>{
+                    //         'subject': 'Example Subject & Symbols are allowed!',
+                    //       }),
+                    //     );
 
-                        try {
-                          await launchUrl(emailLaunchUri);
-                        } catch (e) {
-                          notifaceError(
-                              context, jsonDecode(e.toString())['message']);
-                        }
-                      },
-                      child: SvgPicture.asset(
-                        ImageFactory.gmailIcon,
-                        width: 22,
-                        height: 22,
-                      ),
-                    ),
+                    //     try {
+                    //       await launchUrl(emailLaunchUri);
+                    //     } catch (e) {
+                    //       notifaceError(
+                    //           context, jsonDecode(e.toString())['message']);
+                    //     }
+                    //   },
+                    //   child: SvgPicture.asset(
+                    //     ImageFactory.gmailIcon,
+                    //     width: 22,
+                    //     height: 22,
+                    //   ),
+                    // ),
                     GestureDetector(
                       onTap: () async {
                         Modular.to.pushNamed(RoutePath.chatScreen, arguments: [
@@ -565,11 +567,6 @@ class _DetailRecruitmentState extends State<DetailRecruitment> {
                     icon: ImageFactory.threePerson,
                     title: 'Số lượng cần tuyển',
                     content: widget.recruitment.numberOfRecruits.toString(),
-                  ),
-                  InfoRecuitmentItem(
-                    icon: ImageFactory.sex,
-                    title: 'Giới tính',
-                    content: widget.recruitment.gender!,
                   ),
                   InfoRecuitmentItem(
                     icon: ImageFactory.workExp,

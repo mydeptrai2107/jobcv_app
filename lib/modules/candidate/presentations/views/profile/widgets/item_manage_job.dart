@@ -35,7 +35,7 @@ class _ItemManageJobState extends State<ItemManageJob> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SvgPicture.asset(widget.icon,
-                width: 22, height: 22, color: primaryColor),
+                width: 20, height: 20, color: primaryColor),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,7 +45,10 @@ class _ItemManageJobState extends State<ItemManageJob> {
                     widget.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 Text(

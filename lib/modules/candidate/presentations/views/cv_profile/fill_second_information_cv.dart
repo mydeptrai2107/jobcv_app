@@ -14,7 +14,6 @@ import 'package:app/modules/candidate/presentations/views/cv_profile/widgets/exp
 import 'package:app/modules/candidate/presentations/views/cv_profile/widgets/school_item.dart';
 import 'package:app/modules/candidate/presentations/views/cv_profile/widgets/skill_item.dart';
 import 'package:app/modules/candidate/presentations/views/widgets/button_app.dart';
-import 'package:app/modules/candidate/presentations/views/widgets/button_outline.dart';
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:elegant_notification/resources/arrays.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +101,7 @@ class _FillSecondInformationScreenState
 
   _imgFromCamera() async {
     await picker
-        .pickImage(source: ImageSource.camera, imageQuality: 50)
+        .pickImage(source: ImageSource.camera, imageQuality: 1)
         .then((value) {
       if (value != null) {
         _cropImage(File(value.path));
@@ -112,7 +111,7 @@ class _FillSecondInformationScreenState
 
   _imgFromGallery() async {
     await picker
-        .pickImage(source: ImageSource.gallery, imageQuality: 50)
+        .pickImage(source: ImageSource.gallery, imageQuality: 1)
         .then((value) {
       if (value != null) {
         _cropImage(File(value.path));
@@ -123,7 +122,7 @@ class _FillSecondInformationScreenState
   _cropImage(File imgFile) async {
     final croppedFile = await ImageCropper().cropImage(
         sourcePath: imgFile.path,
-        aspectRatio: const CropAspectRatio(ratioX: 3/2, ratioY: 3/2),
+        aspectRatio: const CropAspectRatio(ratioX: 3 / 2, ratioY: 3 / 2),
         uiSettings: [
           AndroidUiSettings(
               toolbarTitle: "Image Cropper",
@@ -159,8 +158,8 @@ class _FillSecondInformationScreenState
                   children: [
                     Expanded(
                         child: InkWell(
-                      child:const Column(
-                        children:  [
+                      child: const Column(
+                        children: [
                           Icon(
                             Icons.image,
                             size: 60.0,
@@ -180,9 +179,9 @@ class _FillSecondInformationScreenState
                     )),
                     Expanded(
                         child: InkWell(
-                      child:const SizedBox(
+                      child: const SizedBox(
                         child: Column(
-                          children:  [
+                          children: [
                             Icon(
                               Icons.camera_alt,
                               size: 60.0,
@@ -752,22 +751,12 @@ class _FillSecondInformationScreenState
                           const Text('Thông tin của bạn đã lưu thành công'),
                       onDismiss: () {},
                     ).show(context);
+                    Modular.to.pop();
                   },
                   title: 'Lưu CV',
                   paddingvertical: 15,
                 ),
               ),
-              const SizedBox(
-                width: 15,
-              ),
-              Expanded(
-                child: ButtonOutline(
-                  borderRadius: 100,
-                  onPress: () {},
-                  title: 'Xem trước',
-                  paddingvertical: 15,
-                ),
-              )
             ],
           ),
         ),

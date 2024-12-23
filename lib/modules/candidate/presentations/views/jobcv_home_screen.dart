@@ -2,11 +2,12 @@
 
 import 'package:app/configs/image_factory.dart';
 import 'package:app/configs/uri.dart';
+import 'package:app/modules/candidate/data/models/profile_model.dart';
 import 'package:app/modules/candidate/data/models/user_model.dart';
 import 'package:app/modules/candidate/domain/providers/provider_auth.dart';
 import 'package:app/modules/candidate/presentations/themes/color.dart';
 import 'package:app/modules/candidate/presentations/views/chat/screens/home_chat_candidate_screen.dart';
-import 'package:app/modules/candidate/presentations/views/cv_profile/welcome_create_cv.dart';
+import 'package:app/modules/candidate/presentations/views/cv_profile/list_profile_screen.dart';
 import 'package:app/modules/candidate/presentations/views/home/home_screen.dart';
 import 'package:app/modules/candidate/presentations/views/profile/account_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class _JobCVHomeScreenState extends State<JobCVHomeScreen> {
   String avatar = '';
 
   UserModel user = Modular.get<ProviderAuth>().user;
+  List<Profile> listProfile = [];
 
   @override
   void initState() {
@@ -37,7 +39,7 @@ class _JobCVHomeScreenState extends State<JobCVHomeScreen> {
     context.watch<ProviderAuth>();
     final tabs = [
       const HomeScreen(),
-      const WelcomeCreateCV(),
+      const ListProfileScreen(),
       HomeChatCandidateScreen(currentUserId: user.userId),
       const AccountScreen()
     ];

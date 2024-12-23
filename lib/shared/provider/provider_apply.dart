@@ -22,13 +22,13 @@ class ProviderApply extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
-  Future<Apply> createApply(String idUser, String idProfile, String idRecruit, String nameRecruit,
-      String idCompany, String comment) async {
+  Future<Apply> createApply(String idUser, String idProfile, String idRecruit,
+      String nameRecruit, String idCompany, String comment) async {
     try {
       _isLoading = true;
       notifyListeners();
       Map<String, dynamic> responseBody = await _applyRepository.createApply(
-          idUser, idProfile, idRecruit,nameRecruit, idCompany, comment);
+          idUser, idProfile, idRecruit, nameRecruit, idCompany, comment);
       Apply apply = Apply.fromJson(responseBody);
       _isLoading = false;
       notifyListeners();
@@ -56,6 +56,9 @@ class ProviderApply extends ChangeNotifier {
     try {
       List<Recruitment> list = [];
       List<Apply> applys = await getListApply(idUser);
+      if (applys.isEmpty) {
+        return list;
+      }
       Apply apply = applys[applys.length - 1];
       RecruitmentLike recruitment = await Modular.get<ProviderRecruitment>()
           .getRecruitById(apply.recruitmentId);

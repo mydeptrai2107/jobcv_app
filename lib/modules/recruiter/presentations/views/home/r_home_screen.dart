@@ -33,10 +33,11 @@ class HomeScreen extends StatelessWidget {
                     'Tin tuyển dụng đã tạo gần đây',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: ItemRecruitment(item: provider.recentlyCreatedR!),
-                  )
+                  if (provider.recentlyCreatedR != null)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: ItemRecruitment(item: provider.recentlyCreatedR!),
+                    )
                 ],
               ),
               const SizedBox(height: 26.0),

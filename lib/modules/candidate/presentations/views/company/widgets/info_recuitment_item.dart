@@ -20,7 +20,6 @@ class InfoRecuitmentItem extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(top: 10.h),
-      width: size.width,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

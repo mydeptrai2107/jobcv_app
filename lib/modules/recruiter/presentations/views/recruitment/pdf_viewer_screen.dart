@@ -74,7 +74,8 @@ class _PDFViewerScreenState extends State<PDFViewerScreen> {
           Expanded(
             child: Center(
               child: SfPdfViewer.network(
-                  userRepositories.getAvatar(widget.pathCV)),
+                userRepositories.getAvatar(widget.pathCV),
+              ),
             ),
           ),
         ],
