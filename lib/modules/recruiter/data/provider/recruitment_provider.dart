@@ -76,8 +76,9 @@ class RecruitmentProvider extends ChangeNotifier {
 
   Future recentlyCreated() async {
     _listRecruitmentAll.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
-    if (_listRecruitmentAll.isNotEmpty)
+    if (_listRecruitmentAll.isNotEmpty) {
       _recentlyCreatedR = _listRecruitmentAll.last;
+    }
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
 

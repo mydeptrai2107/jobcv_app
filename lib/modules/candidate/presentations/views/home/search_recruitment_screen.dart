@@ -49,9 +49,10 @@ class _SearchRecruitmentScreenState extends State<SearchRecruitmentScreen> {
             },
             controller: _searchController,
             decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                border: InputBorder.none,
-                hintText: 'Tên việc làm'),
+              prefixIcon: Icon(Icons.search),
+              border: InputBorder.none,
+              hintText: 'Tên việc làm',
+            ),
           ),
         ),
       ),
@@ -85,16 +86,17 @@ class _SearchRecruitmentScreenState extends State<SearchRecruitmentScreen> {
                   height: size.height,
                   padding: const EdgeInsets.only(top: 15),
                   child: ListView.separated(
-                      itemBuilder: (context, index) {
-                        return ItemRecuitment(
-                            recruitment: listRecruitment[index].recruitment);
-                      },
-                      separatorBuilder: (context, index) {
-                        return const SizedBox(
-                          height: 20,
-                        );
-                      },
-                      itemCount: listRecruitment.length),
+                    itemBuilder: (context, index) {
+                      return ItemRecuitment(
+                          recruitment: listRecruitment[index].recruitment);
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 20,
+                      );
+                    },
+                    itemCount: listRecruitment.length,
+                  ),
                 ),
     );
   }

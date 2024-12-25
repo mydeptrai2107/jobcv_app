@@ -5,7 +5,6 @@ import 'package:app/modules/recruiter/data/provider/recruitment_provider.dart';
 import 'package:app/modules/recruiter/presentations/views/management/widgets/item_cv_widget.dart';
 import 'package:app/shared/provider/provider_apply.dart';
 import 'package:flutter/material.dart';
-import 'package:app/modules/recruiter/presentations/widgets/search_box.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ManagementScreen extends StatefulWidget {
@@ -51,35 +50,17 @@ class _ManagementScreenState extends State<ManagementScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-            title: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: SearchBox(
-                hinText: 'Tìm kiếm tên',
-                callback: () async {
-                  await context
-                      .read<RecruitmentProvider>()
-                      .searchListCV(textEditingController.text);
-                },
-                closeSearch: () async {
-                  textEditingController.clear();
-                  await context
-                      .read<RecruitmentProvider>()
-                      .searchListCV(textEditingController.text);
-                },
-                textEditingController: textEditingController,
-              ),
-            ),
-            bottom: const TabBar(tabs: [
-              Tab(
-                text: 'Vừa nhận',
-              ),
-              Tab(
-                text: 'Phê duyệt',
-              ),
-              Tab(
-                text: 'Loại',
-              )
-            ])),
+            title: const TabBar(tabs: [
+          Tab(
+            text: 'Vừa nhận',
+          ),
+          Tab(
+            text: 'Phê duyệt',
+          ),
+          Tab(
+            text: 'Loại',
+          )
+        ])),
         body: TabBarView(
           children: [
             justReceived(context),
@@ -136,7 +117,6 @@ class _ManagementScreenState extends State<ManagementScreen> {
                               listPass.clear();
                               await initData();
                               setState(() {});
-                              print('3sssssssssssssssss');
                             },
                           );
                         }),
@@ -197,7 +177,6 @@ class _ManagementScreenState extends State<ManagementScreen> {
                                 listPass.clear();
                                 await initData();
                                 setState(() {});
-                                print('2sssssssssssssssss');
                               },
                             );
                           },
@@ -259,7 +238,6 @@ class _ManagementScreenState extends State<ManagementScreen> {
                                 listPass.clear();
                                 await initData();
                                 setState(() {});
-                                print('1sssssssssssssssss');
                               },
                             );
                           },

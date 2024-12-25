@@ -99,7 +99,7 @@ class _PreviewCVScreenState extends State<PreviewCVScreen> {
           this.bytes = bytes;
           createPDF(bytes!);
           await savePDF();
-          Modular.to.navigate(RoutePath.listProfile);
+          Modular.to.navigate(RoutePath.home);
         },
       ),
     );
